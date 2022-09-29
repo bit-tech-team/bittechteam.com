@@ -23,7 +23,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/assets/images/Profile-pic.jfif", "src/assets"],
             "styles": [
               "src/styles.min.css",
               "src/assets/css/animate.min.css",
