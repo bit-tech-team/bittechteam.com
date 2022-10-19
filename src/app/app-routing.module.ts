@@ -5,14 +5,12 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./application/application.module').then(
-        (m) => m.ApplicationModule
-      ),
+      import('./views/index/index.module').then((m) => m.IndexModule),
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
