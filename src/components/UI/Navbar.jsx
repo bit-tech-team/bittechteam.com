@@ -1,377 +1,257 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link as LinkScroll } from "react-scroll";
 
-import "../styles/menu.css"
+/* import "../styles/menu.css"; */
+import Logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
+  const [activeLink, setActiveLink] = useState(null);
+  const [scrollActive, setScrollActive] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScrollActive(window.scrollY > 20);
+    });
+  }, []);
   return (
     <>
-      <nav className="relative bg-white border-b-2 border-gray-300 text-gray-900">
-        <div className="container mx-auto flex justify-between">
-          <div className="relative block p-4 lg:p-6 text-xl text-blue-600 font-bold">
-            Logo
+      <header
+        className={
+          "fixed top-0 w-full  z-30 bg-white-500 transition-all " +
+          (scrollActive ? " shadow-md pt-0" : " pt-4")
+        }
+      >
+        <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
+          <div className="col-start-1 col-end-2 flex items-center">
+            <img src={Logo} className="h-8 w-auto" />
           </div>
-          <ul className="flex">
-            {/* Regular Link */}
-            <li className="hover:bg-blue-800 hover:text-white">
-              <a
-                href="#"
-                className="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold"
-              >
-                Normal
+          <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500 items-center">
+            <LinkScroll
+              activeClass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("about");
+              }}
+              className={
+                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                (activeLink === "about"
+                  ? " text-orange-500 animation-active "
+                  : " text-black-500 hover:text-orange-500 a")
+              }
+            >
+              About
+            </LinkScroll>
+
+            <LinkScroll
+              activeClass="active"
+              to="feature"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("services");
+              }}
+              className={
+                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                (activeLink === "services"
+                  ? " text-orange-500 animation-active "
+                  : " text-black-500 hover:text-orange-500 ")
+              }
+            >
+              Services
+            </LinkScroll>
+
+            <LinkScroll
+              activeClass="active"
+              to="pricing"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("applications");
+              }}
+              className={
+                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                (activeLink === "applications"
+                  ? " text-orange-500 animation-active "
+                  : " text-black-500 hover:text-orange-500 ")
+              }
+            >
+              Applications
+            </LinkScroll>
+
+            <LinkScroll
+              activeClass="active"
+              to="testimoni"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("testimoni");
+              }}
+              className={
+                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                (activeLink === "testimoni"
+                  ? " text-orange-500 animation-active "
+                  : " text-black-500 hover:text-orange-500 ")
+              }
+            >
+              Testimonial
+            </LinkScroll>
+          </ul>
+          {/* <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
+            <Link href="/">
+              <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all">
+                  Sign In
               </a>
-            </li>
+            </Link>
+            <ButtonOutline>Sign Up</ButtonOutline>
+          </div> */}
+        </nav>
+      </header>
+      
+      {/* Mobile Navigation */}
 
-            {/* Toggleable Link */}
-            <li className="toggleable hover:bg-blue-800 hover:text-white">
-              <input
-                type="checkbox"
-                value="selected"
-                id="toggle-one"
-                className="toggle-input"
-              />
-              <label
-                htmlFor="toggle-one"
-                className="block cursor-pointer py-6 px-4 lg:p-6 text-sm lg:text-base font-bold"
+      <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-4 sm:px-8 shadow-t ">
+        <div className="bg-white-500 sm:px-3">
+          <ul className="flex w-full justify-between items-center text-black-500">
+            <LinkScroll
+              activeClass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("about");
+              }}
+              className={
+                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
+                (activeLink === "about"
+                  ? "border-orange-500 text-orange-500"
+                  : "border-transparent")
+              }
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Click
-              </label>
-              <div
-                role="toggle"
-                className="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-blue-800"
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              About
+            </LinkScroll>
+
+            <LinkScroll
+              activeClass="active"
+              to="feature"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("services");
+              }}
+              className={
+                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
+                (activeLink === "services"
+                  ? "border-orange-500 text-orange-500"
+                  : "border-transparent")
+              }
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
-                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-                    <h3 className="font-bold text-xl text-white text-bold mb-2">
-                      Heading 1
-                    </h3>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                  </ul>
-                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-                    <h3 className="font-bold text-xl text-white text-bold mb-2">
-                      Heading 2
-                    </h3>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                  </ul>
-                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-b-0 sm:border-r md:border-b-0 pb-6 pt-6 lg:pt-3">
-                    <h3 className="font-bold text-xl text-white text-bold">
-                      Heading 3
-                    </h3>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"
-                      >
-                        Category One Sublink
-                      </a>
-                    </li>
-                  </ul>
-                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
-                    <h3 className="font-bold text-xl text-white text-bold mb-2">
-                      Heading 4
-                    </h3>
-                    <li className="pt-3">
-                      <img src="https://placehold.it/205x172" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                />
+              </svg>
+              Services
+            </LinkScroll>
 
-            {/* ## Toggleable Link Template ## */}
-
-            {/* <li className="toggleable">
-              <input
-                type="checkbox"
-                value="selected"
-                id="toggle-xxx"
-                className="toggle-input"
-              />
-              <label for="toggle-xxx" className="cursor-pointer">
-                Click
-              </label>
-              <div role="toggle" className="mega-menu">
-                Add your mega menu content
-              </div>
-            </li> */}
-
-            {/* Hoverable Link */}
-            <li className="hoverable hover:bg-blue-800 hover:text-white">
-              <a
-                href="#"
-                className="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold hover:bg-blue-800 hover:text-white"
+            <LinkScroll
+              activeClass="active"
+              to="pricing"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("applications");
+              }}
+              className={
+                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
+                (activeLink === "applications"
+                  ? "  border-orange-500 text-orange-500"
+                  : " border-transparent ")
+              }
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Hover
-              </a>
-              <div className="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-blue-800">
-                <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
-                  <div className="w-full text-white mb-8">
-                    <h2 className="font-bold text-2xl">
-                      Main Hero Message for the menu section
-                    </h2>
-                    <p>
-                      Sub-hero message, not too long and not too short. Make it
-                      just right!
-                    </p>
-                  </div>
-                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-                    <div className="flex items-center">
-                      <svg
-                        className="h-8 mb-3 mr-3 fill-current text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M3 6c0-1.1.9-2 2-2h8l4-4h2v16h-2l-4-4H5a2 2 0 0 1-2-2H1V6h2zm8 9v5H8l-1.67-5H5v-2h8v2h-2z" />
-                      </svg>
-                      <h3 className="font-bold text-xl text-white text-bold mb-2">
-                        Heading 1
-                      </h3>
-                    </div>
-                    <p className="text-gray-100 text-sm">
-                      Quarterly sales are at an all-time low create spaces to
-                      explore the accountable talk and blind vampires.
-                    </p>
-                    <div className="flex items-center py-3">
-                      <svg
-                        className="h-6 pr-3 fill-current text-blue-300"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z" />
-                      </svg>
-                      <a
-                        href="#"
-                        className="text-white bold border-b-2 border-blue-300 hover:text-blue-300"
-                      >
-                        Find out more...
-                      </a>
-                    </div>
-                  </ul>
-                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-                    <div className="flex items-center">
-                      <svg
-                        className="h-8 mb-3 mr-3 fill-current text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M4.13 12H4a2 2 0 1 0 1.8 1.11L7.86 10a2.03 2.03 0 0 0 .65-.07l1.55 1.55a2 2 0 1 0 3.72-.37L15.87 8H16a2 2 0 1 0-1.8-1.11L12.14 10a2.03 2.03 0 0 0-.65.07L9.93 8.52a2 2 0 1 0-3.72.37L4.13 12zM0 4c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4z" />
-                      </svg>
-                      <h3 className="font-bold text-xl text-white text-bold mb-2">
-                        Heading 2
-                      </h3>
-                    </div>
-                    <p className="text-gray-100 text-sm">
-                      Prioritize these line items game-plan draw a line in the
-                      sand come up with something buzzworthy UX upstream
-                      selling.
-                    </p>
-                    <div className="flex items-center py-3">
-                      <svg
-                        className="h-6 pr-3 fill-current text-blue-300"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z" />
-                      </svg>
-                      <a
-                        href="#"
-                        className="text-white bold border-b-2 border-blue-300 hover:text-blue-300"
-                      >
-                        Find out more...
-                      </a>
-                    </div>
-                  </ul>
-                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-b-0 sm:border-r md:border-b-0 pb-6 pt-6 lg:pt-3">
-                    <div className="flex items-center">
-                      <svg
-                        className="h-8 mb-3 mr-3 fill-current text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M2 4v14h14v-6l2-2v10H0V2h10L8 4H2zm10.3-.3l4 4L8 16H4v-4l8.3-8.3zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z" />
-                      </svg>
-                      <h3 className="font-bold text-xl text-white text-bold mb-2">
-                        Heading 3
-                      </h3>
-                    </div>
-                    <p className="text-gray-100 text-sm">
-                      This proposal is a win-win situation which will cause a
-                      stellar paradigm shift, let's touch base off-line before
-                      we fire the new ux experience.
-                    </p>
-                    <div className="flex items-center py-3">
-                      <svg
-                        className="h-6 pr-3 fill-current text-blue-300"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z" />
-                      </svg>
-                      <a
-                        href="#"
-                        className="text-white bold border-b-2 border-blue-300 hover:text-blue-300"
-                      >
-                        Find out more...
-                      </a>
-                    </div>
-                  </ul>
-                  <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
-                    <div className="flex items-center">
-                      <svg
-                        className="h-8 mb-3 mr-3 fill-current text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
-                      </svg>
-                      <h3 className="font-bold text-xl text-white text-bold mb-2">
-                        Heading 4
-                      </h3>
-                    </div>
-                    <p className="text-gray-100 text-sm">
-                      This is a no-brainer to wash your face, or we need to
-                      future-proof this high performance keywords granularity.
-                    </p>
-                    <div className="flex items-center py-3">
-                      <svg
-                        className="h-6 pr-3 fill-current text-blue-300"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z" />
-                      </svg>
-                      <a
-                        href="#"
-                        className="text-white bold border-b-2 border-blue-300 hover:text-blue-300"
-                      >
-                        Find out more...
-                      </a>
-                    </div>
-                  </ul>
-                </div>
-              </div>
-            </li>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              Applications
+            </LinkScroll>
 
-            {/* ## Hoverable Link Template ## */}
-
-            {/* <li className="hoverable hover:bg-blue-800 hover:text-white">
-              <a href="#" className="relative block">
-                x
-              </a>
-              <div className="mega-menu">Add your mega menu content</div>
-            </li> */}
+            <LinkScroll
+              activeClass="active"
+              to="testimoni"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("testimoni");
+              }}
+              className={
+                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
+                (activeLink === "testimoni"
+                  ? "  border-orange-500 text-orange-500"
+                  : " border-transparent ")
+              }
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                />
+              </svg>
+              Testimonial
+            </LinkScroll>
           </ul>
         </div>
       </nav>
+      {/* End Mobile Navigation */}
     </>
   );
 };
