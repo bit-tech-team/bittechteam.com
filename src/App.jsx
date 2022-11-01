@@ -32,11 +32,11 @@ function App() {
       <AuthProvider>
         <ProjectProvider>
           <Routes>
+            
             <Route path="/" element={<MainLayout />}>
               <Route index element={<Index />} />
             </Route>
-          </Routes>
-          <Routes>
+
             <Route path="/auth/magnus" element={<AuthLayout />}>
               <Route index element={<Login />} />
               <Route path="register" element={<SignIn />} />
