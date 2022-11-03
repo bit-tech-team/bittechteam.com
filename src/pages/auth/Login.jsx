@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import Alert from "../../components/Alert";
+import Alert from "../../components/misc/Alert";
 import axiosClient from "../../config/axiosClient";
 import useAuth from "../../hooks/useAuth";
 import img from "../../assets/banners/Magnus.png"

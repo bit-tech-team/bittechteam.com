@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { useParams } from "react-router-dom";
 import useProjects from "../../hooks/useProjects";
 
-import Alert from "../Alert";
+import Alert from "../misc/Alert";
 
 const PRIORITY = ["Baja", "Media", "Alta"];
 

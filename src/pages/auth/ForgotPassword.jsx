@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Alert from "../../components/Alert";
+import Alert from "../../components/misc/Alert";
 import axiosClient from "../../config/axiosClient";
 import img from "../../assets/banners/Magnus.png";
 

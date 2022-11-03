@@ -7,9 +7,9 @@ import ModalFormTask from "../../components/Modals/ModalFormTask";
 import ModalDeleteTask from "../../components/Modals/ModalDeleteTask";
 import ModalDeleteCollaborator from "../../components/Modals/ModalDeleteCollaborator";
 
-import Task from "../../components/Task";
+import Task from "../../components/Project/Task";
 
-import Collaborator from "../../components/Collaborator";
+import Collaborator from "../../components/Project/Collaborator";
 
 const Project = () => {
   const params = useParams();

@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import useProjects from "../../hooks/useProjects";
-import PreviewProjects from "../../components/PreviewProjects";
+import PreviewProjects from "../../components/Project/PreviewProjects";
 
-import Alert from "../../components/Alert";
+import Alert from "../../components/misc/Alert";
 
 import io from "socket.io-client";
 

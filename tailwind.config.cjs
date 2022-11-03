@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["index.html", "./src/**/*.jsx"],
-  /* theme: {
+  theme: {
     boxShadow: {
       sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
       DEFAULT:
@@ -38,7 +38,7 @@ module.exports = {
       },
     },
     extend: {},
-  }, */
+  },
   variants: {
     extend: {
       boxShadow: ["active", "hover"],
