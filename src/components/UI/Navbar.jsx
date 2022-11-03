@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link as LinkScroll } from "react-scroll";
 
-/* import "../styles/menu.css"; */
 import Logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
@@ -89,16 +88,16 @@ const Navbar = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("testimoni");
+                setActiveLink("social");
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "testimoni"
+                (activeLink === "social"
                   ? " text-orange-500 animation-active "
                   : " text-black-500 hover:text-orange-500 ")
               }
             >
-              Testimonial
+              Social
             </LinkScroll>
           </ul>
           {/* <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
@@ -223,11 +222,11 @@ const Navbar = () => {
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("testimoni");
+                setActiveLink("social");
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "testimoni"
+                (activeLink === "social"
                   ? "  border-orange-500 text-orange-500"
                   : " border-transparent ")
               }
@@ -246,7 +245,7 @@ const Navbar = () => {
                   d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                 />
               </svg>
-              Testimonial
+              Social
             </LinkScroll>
           </ul>
         </div>
