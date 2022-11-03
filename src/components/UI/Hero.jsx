@@ -43,10 +43,9 @@ const Hero = ({
               Want anything to be easy with <strong>Bit Tech Team</strong>.
             </h1>
             <p className="text-black-500 mt-4 mb-6">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugiat
-              blanditiis quisquam consequatur sunt iste accusantium natus sit
-              magni, reprehenderit, velit eos ratione a quod. Tempore, velit
-              cum? Sapiente, aut.
+              Bit Tech Team is an open-source organization focused on the
+              development of web, mobile and desktop applications. Our main
+              development is based on node, angular and react.
             </p>
             <ButtonPrimary>Get Started</ButtonPrimary>
           </div>

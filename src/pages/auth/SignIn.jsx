@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Alert from "../../components/Alert";
 import axiosClient from "../../config/axiosClient";
-import { BACKGROUND_IMAGE_FORM } from "../../helpers/constants";
+import img from "../../assets/banners/Magnus.png"
 
 const SignIn = () => {
   const [name, setName] = useState("");
@@ -70,11 +70,11 @@ const SignIn = () => {
   return (
     <>
       <div>
-        <div className="relative min-h-screen  grid bg-black ">
+        <div className="relative min-h-screen grid !bg-black ">
           <div className="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 ">
             <div
               className="relative sm:w-1/2 xl:w-3/5 bg-blue-500 h-full hidden md:flex flex-auto items-center justify-center p-10 overflow-hidden  text-white bg-no-repeat bg-cover"
-              style={{ backgroundImage: `url(${BACKGROUND_IMAGE_FORM})` }}
+              style={{ backgroundImage: `url(${img})` }}
             >
               <div className="absolute bg-black  opacity-25 inset-0 z-0"></div>
               <div className="w-full  lg:max-w-2xl md:max-w-md z-10 items-center text-center ">
