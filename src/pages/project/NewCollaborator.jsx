@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useProjects from "../../hooks/useProjects";
 
-import CollaboratorForm from "../../components/CollaboratorForm";
-import Alert from "../../components/Alert";
+import CollaboratorForm from "../../components/Project/CollaboratorForm";
+import Alert from "../../components/misc/Alert";
 
 const NewCollaborator = () => {
   const { getProject, project, loading, collaborator, addCollaborator, alert } =

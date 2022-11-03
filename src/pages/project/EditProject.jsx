@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useProjects from "../../hooks/useProjects";
-import ProjectForm from "../../components/ProjectForm";
+import ProjectForm from "../../components/Project/ProjectForm";
 
 const EditProject = () => {
   const params = useParams();

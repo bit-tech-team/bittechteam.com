@@ -1,6 +1,6 @@
-import { formatDate } from "../helpers/formatDate";
-import useProjects from "../hooks/useProjects";
-import useAdmin from "../hooks/useAdmin";
+import { formatDate } from "../../helpers/formatDate";
+import useProjects from "../../hooks/useProjects";
+import useAdmin from "../../hooks/useAdmin";
 
 const Task = ({ task }) => {
   const { name, description, dateDelivery, priority, state, _id } = task;

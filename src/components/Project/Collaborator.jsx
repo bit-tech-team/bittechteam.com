@@ -1,4 +1,4 @@
-import useProjects from "../hooks/useProjects";
+import useProjects from "../../hooks/useProjects";
 
 const Collaborator = ({ collaborator }) => {
   const { name, email } = collaborator;
