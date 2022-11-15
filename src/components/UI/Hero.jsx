@@ -6,9 +6,9 @@ import getScrollAnimation from "../../helpers/getScrollAnimation";
 import ButtonPrimary from "../misc/ButtonPrimary";
 
 import img from "../../assets/Illustration1.png";
-import icon_one from "../../assets/Icon/heroicons_sm-user.svg";
-import icon_two from "../../assets/Icon/gridicons_location.svg";
-import icon_three from "../../assets/Icon/bx_bxs-server.svg";
+import icon_one from "../../assets/images/Icon/heroicons_sm-user.svg";
+import icon_two from "../../assets/images/Icon/gridicons_location.svg";
+import icon_three from "../../assets/images/Icon/bx_bxs-server.svg";
 
 const Hero = ({
   listUser = [
