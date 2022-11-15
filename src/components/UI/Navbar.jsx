@@ -45,26 +45,7 @@ const Navbar = () => {
 
             <LinkScroll
               activeClass="active"
-              to="feature"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("services");
-              }}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "services"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
-              }
-            >
-              Services
-            </LinkScroll>
-
-            <LinkScroll
-              activeClass="active"
-              to="pricing"
+              to="applications"
               spy={true}
               smooth={true}
               duration={1000}
@@ -83,7 +64,26 @@ const Navbar = () => {
 
             <LinkScroll
               activeClass="active"
-              to="testimoni"
+              to="services"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("services");
+              }}
+              className={
+                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
+                (activeLink === "services"
+                  ? " text-orange-500 animation-active "
+                  : " text-black-500 hover:text-orange-500 ")
+              }
+            >
+              Services
+            </LinkScroll>
+
+            <LinkScroll
+              activeClass="active"
+              to="social"
               spy={true}
               smooth={true}
               duration={1000}
@@ -100,17 +100,9 @@ const Navbar = () => {
               Social
             </LinkScroll>
           </ul>
-          {/* <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
-            <Link href="/">
-              <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all">
-                  Sign In
-              </a>
-            </Link>
-            <ButtonOutline>Sign Up</ButtonOutline>
-          </div> */}
         </nav>
       </header>
-      
+
       {/* Mobile Navigation */}
 
       <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-4 sm:px-8 shadow-t ">
@@ -151,40 +143,7 @@ const Navbar = () => {
 
             <LinkScroll
               activeClass="active"
-              to="feature"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("services");
-              }}
-              className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "services"
-                  ? "border-orange-500 text-orange-500"
-                  : "border-transparent")
-              }
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                />
-              </svg>
-              Services
-            </LinkScroll>
-
-            <LinkScroll
-              activeClass="active"
-              to="pricing"
+              to="applications"
               spy={true}
               smooth={true}
               duration={1000}
@@ -217,7 +176,40 @@ const Navbar = () => {
 
             <LinkScroll
               activeClass="active"
-              to="testimoni"
+              to="services"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("services");
+              }}
+              className={
+                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
+                (activeLink === "services"
+                  ? "border-orange-500 text-orange-500"
+                  : "border-transparent")
+              }
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                />
+              </svg>
+              Services
+            </LinkScroll>
+
+            <LinkScroll
+              activeClass="active"
+              to="social"
               spy={true}
               smooth={true}
               duration={1000}
