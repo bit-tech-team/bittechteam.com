@@ -1,9 +1,11 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 import Logo from "../../assets/images/logo.png";
 import Facebook from "../../assets/images/Icon/facebook.svg";
 import Twitter from "../../assets/images/Icon/twitter.svg";
 import Instagram from "../../assets/images/Icon/instagram.svg";
+import Cookies from "../../pages/footer/Cookies";
 
 const Footer = () => {
   return (
@@ -40,6 +42,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
+
           <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
             <div className="mb-10 w-full">
               <h4 className="text-dark mb-9 text-lg font-semibold">
@@ -47,28 +50,27 @@ const Footer = () => {
               </h4>
               <ul>
                 <li>
-                  <a
-                    href="#"
+                  <Link to="/cookies" 
                     className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
                   >
-                    SaaS Development
-                  </a>
+                    Cookies
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/privacy-policy"
                     className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
                   >
-                    Our Products
-                  </a>
+                    Privacy Policy
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/terms-conditions"
                     className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
                   >
-                    User Flow
-                  </a>
+                    Terms and Conditions
+                  </Link>
                 </li>
                 <li>
                   <a
@@ -81,6 +83,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+
           <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
             <div className="mb-10 w-full">
               <h4 className="text-dark mb-9 text-lg font-semibold">Company</h4>
@@ -90,7 +93,7 @@ const Footer = () => {
                     href="#"
                     className="text-body-color hover:text-primary mb-2 inline-block text-base leading-loose"
                   >
-                    About TailGrids
+                    About bittechteam
                   </a>
                 </li>
                 <li>
@@ -120,6 +123,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+
           <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
             <div className="mb-10 w-full">
               <h4 className="text-dark mb-9 text-lg font-semibold">
@@ -161,6 +165,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+
           <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
             <div className="mb-10 w-full">
               <h4 className="text-dark mb-9 text-lg font-semibold">
@@ -220,9 +225,10 @@ const Footer = () => {
                   </svg>
                 </a>
               </div>
-              <p className="text-body-color text-base">&copy; 2025 TailGrids</p>
+              <p className="text-body-color text-base">&copy; 2022 bittechteam</p>
             </div>
           </div>
+
         </div>
       </div>
       <div>

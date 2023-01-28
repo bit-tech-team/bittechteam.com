@@ -24,10 +24,10 @@ export const APPLICATION = [
       "Add, modify and delete your tasks",
     ],
   },
-  /*  {
-    titleSection: "Spender Manager",
-    descriptionSection: "",
+  {
+    titleSection: "Dev Tools",
+    descriptionSection: "A collection of tools for developer than can help you in your tasks",
     imageSection: "",
-    features: ["asd", "asd", "asd", "asd", ""],
-  }, */
+    features : ["", "", "", ""]
+  },
 ];
